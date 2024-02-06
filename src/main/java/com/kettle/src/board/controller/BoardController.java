@@ -1,4 +1,4 @@
-package com.kettle.board;
+package com.kettle.src.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
