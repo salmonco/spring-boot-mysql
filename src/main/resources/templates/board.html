@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시판</title>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" type="text/css" href="../static/style.css">-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>게시판</h1>
+    <div id="board">
+        <h2>게시글 목록</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Contents</th>
+                <th>Writer</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.id}"></td>
+                <td th:text="${post.title}"></td>
+                <td th:text="${post.contents}"></td>
+                <td th:text="${post.writer}"></td>
+                <td th:text="${post.date}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <div id="create-post">
+        <h2>새로운 게시글 작성</h2>
+        <form action="/posts" method="POST">
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title"><br>
+            <label for="author">작성자:</label>
+            <input type="text" id="author" name="author"><br>
+            <input type="submit" value="작성">
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--    <script src="../static/main.js"></script>-->
+</body>
+</html>

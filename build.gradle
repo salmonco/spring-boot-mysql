@@ -36,6 +36,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	// Thymeleaf : 스프링 공식 문서에서는 View(화면) 영역에서 JSP가 아닌 타임리프(Thymeleaf) 템플릿 엔진의 사용을 권장
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
 	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
